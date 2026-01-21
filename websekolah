@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>SMK YADIKA 4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- MATERIALIZE -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- AOS ANIMATION -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+
+<style>
+:root{
+  --blue:#0d47a1;
+  --gold:#d4af37;
+}
+
+/* BACKGROUND & ORNAMEN */
+body{
+  font-family:'Poppins',sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(212,175,55,.12), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(13,71,161,.18), transparent 45%),
+    linear-gradient(120deg, #f4f7fb, #eef2f7);
+  overflow-x:hidden;
+  scroll-behavior: smooth;
+}
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  width:600px; height:600px;
+  border-radius:50%;
+  filter:blur(130px);
+  z-index:-1;
+}
+body::before{ top:-200px; left:-200px; background:rgba(212,175,55,.35);}
+body::after{ bottom:-200px; right:-200px; background:rgba(13,71,161,.45);}
+
+/* HEADINGS */
+h1,h2,h3,h4{ font-family:'Playfair Display',serif; }
+
+/* NAVBAR */
+nav.scrolled{ background:rgba(13,71,161,.95)!important; backdrop-filter:blur(12px); }
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:
+    linear-gradient(135deg, rgba(13,71,161,.85), rgba(0,0,0,.75)),
+    url('https://images.unsplash.com/photo-1509062522246-3755977927d7') center/cover no-repeat fixed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+}
+.hero h1{ font-size:4rem; letter-spacing:1.2px; color:white; margin-bottom:15px;}
+.hero p{ color:#f5f5f5; font-size:1.5rem; margin-bottom:25px;}
+.btn-gradient{
+  background:linear-gradient(45deg,var(--gold),#f7e27b);
+  color:#0d47a1;
+  font-weight:600;
+  transition:0.4s;
+}
+.btn-gradient:hover{ transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,.3);}
+
+/* GLASS EFFECT */
+.glass{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(16px);
+  border-radius:20px;
+  padding:45px;
+  box-shadow:0 25px 60px rgba(0,0,0,.08);
+  transition:0.3s;
+}
+.glass:hover{ transform:translateY(-5px); box-shadow:0 30px 70px rgba(0,0,0,.15);}
+
+/* STAT */
+.stat{
+  font-size:3.2rem;
+  font-weight:700;
+  background:linear-gradient(45deg,var(--blue),var(--gold));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* CARD */
+.card{ border-radius:20px; overflow:hidden; transition:0.3s; }
+.card:hover{ transform:translateY(-8px); box-shadow:0 25px 60px rgba(0,0,0,.2);}
+.card-image img{ height:220px; object-fit:cover; }
+
+/* WAVES SEPARATOR */
+.wave{ position:relative; width:100%; height:80px; }
+.wave svg{ position:absolute; width:100%; height:100%; }
+
+/* BACK TO TOP BUTTON */
+#topBtn{
+  display:none;
+  position:fixed;
+  bottom:40px;
+  right:40px;
+  z-index:99;
+  font-size:22px;
+  background:var(--gold);
+  color:var(--blue);
+  border:none;
+  border-radius:50%;
+  padding:15px 18px;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+  transition:0.3s;
+}
+#topBtn:hover{ transform:scale(1.1); box-shadow:0 10px 25px rgba(0,0,0,.35);}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar-fixed">
+<nav class="transparent">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">SMK YADIKA 4</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#keunggulan">Keunggulan</a></li>
+        <li><a href="#pengumuman">Pengumuman</a></li>
+        <li><a href="#artikel">Artikel</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+<!-- HERO -->
+<section class="hero" data-aos="fade-down">
+  <h1>SMK YADIKA 4</h1>
+  <p>Sekolah Kejuruan Unggulan Berbasis Dunia Industri</p>
+  <a class="btn btn-gradient btn-large">PPDB DIBUKA</a>
+</section>
+
+<!-- WAVES -->
+<div class="wave">
+  <svg viewBox="0 0 1440 100"><path fill="#f4f7fb" d="M0,32L48,37.3C96,43,192,53,288,64C384,75,480,85,576,96C672,107,768,117,864,106.7C960,96,1056,64,1152,42.7C1248,21,1344,11,1392,5.3L1440,0L1440,100L1392,100C1344,100,1248,100,1152,100C1056,100,960,100,864,100C768,100,672,100,576,100C480,100,384,100,288,100C192,100,96,100,48,100L0,100Z"></path></svg>
+</div>
+
+<!-- PROFIL -->
+<section id="profil" class="section" data-aos="fade-up">
+  <div class="container">
+    <div class="row valign-wrapper">
+      <div class="col s12 m5">
+        <img src="https://via.placeholder.com/380" class="responsive-img z-depth-4">
+      </div>
+      <div class="col s12 m7 glass">
+  <h3>Sambutan Kepala Sekolah</h3>
+  <p>
+    SMK YADIKA 4 berkomitmen mencetak lulusan unggul,
+    kompeten, berkarakter, dan siap bersaing di dunia kerja.
+  </p>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section id="keunggulan" class="section grey lighten-4" data-aos="fade-up">
+  <div class="container center">
+    <h3>Keunggulan Kami</h3>
+    <div class="row">
+      <div class="col s12 m3 glass"><div class="stat">100+</div><p>Mitra Industri</p></div>
+      <div class="col s12 m3 glass"><div class="stat">95%</div><p>Lulusan Terserap</p></div>
+      <div class="col s12 m3 glass"><div class="stat">30+</div><p>Guru Profesional</p></div>
+      <div class="col s12 m3 glass"><div class="stat">10+</div><p>Ekstrakurikuler</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PENGUMUMAN -->
+<section id="pengumuman" class="section" data-aos="fade-up">
+  <div class="container glass">
+    <h3 class="center">Pengumuman</h3>
+    <ul class="collection">
+      <li class="collection-item">📢 PPDB Tahun Ajaran Baru Dibuka</li>
+      <li class="collection-item">📢 Ujian Akhir Semester 5 Juni</li>
+      <li class="collection-item">📢 Libur Semester 20 Juni</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ARTIKEL -->
+<section id="artikel" class="section grey lighten-4" data-aos="fade-up">
+  <div class="container">
+    <h3 class="center">Artikel & Berita</h3>
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card hoverable">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Teaching Factory</span>
+            <p>Pembelajaran berbasis industri nyata.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card hoverable">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Prestasi Siswa</span>
+            <p>Prestasi siswa tingkat nasional.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card hoverable">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Link & Match DUDI</span>
+            <p>Kerja sama dunia industri.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak" class="section" data-aos="fade-up">
+  <div class="container glass">
+    <h3 class="center">Kontak Kami</h3>
+    <div class="row">
+      <div class="col s12 m6">
+        <p><i class="material-icons">location_on</i> Jl. Pendidikan No.1</p>
+        <p><i class="material-icons">phone</i> 0812-3456-7890</p>
+        <p><i class="material-icons">email</i> info@smyadika4.sch.id</p>
+      </div>
+      <div class="col s12 m6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18"
+        width="100%" height="250" style="border:0;"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="white-text center">
+  <p>© 2026 SMK YADIKA 4 | Unggul • Kompeten • Siap Kerja</p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration:1000, once:true });
+
+window.onscroll = function(){scrollFunction();};
+function scrollFunction(){
+  var btn = document.getElementById("topBtn");
+  if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300){
+    btn.style.display="block";
+  }else{ btn.style.display="none"; }
+}
+function topFunction(){ document.body.scrollTop=0; document.documentElement.scrollTop=0; }
+
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav')
+  .classList.toggle('scrolled',window.scrollY>50);
+});
+</script>
+
+</body>
+</html>
